@@ -38,5 +38,7 @@ hello
   in the
 world
 
+Notice that indentation is inherited.
+
 ----------------------------
 Copyright (C) Jaypha 2014.

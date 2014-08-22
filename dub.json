@@ -1,0 +1,15 @@
+{
+	"name": "filecombine",
+	"description": "Utiltiy to combine a hierarchy of files",
+  "copyright": "Copyright 2014, Jaypha",
+	"authors": ["Jason den Dulk"],
+  "homepage": "https://github.com/jaypha/filecombine",
+	"license": "BSL-1.0",
+
+  "targetType": "executable",
+  "mainSourceFile": "filecombine.d",
+  "postBuildCommands-posix":
+  [
+    "strip filecombine",
+  ]
+}

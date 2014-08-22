@@ -1,4 +1,3 @@
-#!/usr/bin/rdmd
 // Written in the D programming language.
 
 /*
@@ -38,7 +37,7 @@ void main(string[] args)
 {
   if (args.length < 2)
   {
-    writeln("synopsis: filecombine <file>");
+    writeln("synopsis: filecombine <file> [<include_tag>]");
   }
   else
   {

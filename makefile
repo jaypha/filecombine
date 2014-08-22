@@ -7,8 +7,8 @@
 #
 # Authors: Jason den Dulk
 
-filecombine: filecombine.d
-	dmd -O -inline -release filecombine.d
+filecombine: src/filecombine.d
+	dmd -O -inline -release src/filecombine.d
 
 install: filecombine
 	cp filecombine /usr/local/bin
@@ -17,4 +17,5 @@ install: filecombine
 clean:
 	rm filecombine
 	rm filecombine.o
+	rm -rf .dub
 
