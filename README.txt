@@ -16,6 +16,16 @@ encounters a '#include', it includes the indicated file at that point and recurs
 that file. The result is a single stream of content that can be passed to the regular
 processor.
 
+Synopsis
+--------
+
+filecombine <file> [<include_tag>]
+
+file: The name of the main file.
+include_tag: An alternative include indicator, if '#include' is unsuitable.
+
+Output is to the stdout.
+
 Example
 -------
 

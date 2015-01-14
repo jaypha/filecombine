@@ -7,9 +7,5 @@
 	"license": "BSL-1.0",
 
   "targetType": "executable",
-  "mainSourceFile": "filecombine.d",
-  "postBuildCommands-posix":
-  [
-    "strip filecombine",
-  ]
+  "mainSourceFile": "src/filecombine.d",
 }

@@ -16,12 +16,16 @@ module filecombine;
 import std.stdio;
 import std.algorithm;
 import std.string;
+import std.path;
+import std.file;
 
 string include_str;
 
 void read_file(string fname, string indent)
 {
-  auto fin = File(fname,"r");
+  auto cwd = getcwd();
+  chdir(dirName(fname));
+  auto fin = File(baseName(fname),"r");
 
   foreach (string line; lines(fin))
   {
@@ -29,8 +33,9 @@ void read_file(string fname, string indent)
     if (!r[1].length == 0)
       read_file(strip(r[2]),indent ~ r[0]);
     else
-      write(indent,line);
-  }  
+      stdout.write(indent,line);
+  }
+  chdir(cwd);
 }
 
 void main(string[] args)
@@ -45,7 +50,8 @@ void main(string[] args)
         include_str = "#include";
     else
         include_str = args[2];
-      
+
+    //chdir(dirName(args[1]));
     read_file(args[1],"");
   }
 }
