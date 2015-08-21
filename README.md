@@ -1,12 +1,15 @@
 Filecombine
------------
+===========
+
+Heirarchical file combiner
 
 Motivation
 ----------
 
 Many config files or source files are too big to be in just one file. Splitting them up
 makes them more readable and modular. However the language specifications do not
-necessarily account for this. What to do?
+necessarily account for this. Uitlities like 'cat' can combine files sequentially,
+but sometimes it is prefereable to have a heirarchical approach.
 
 Idea
 ----
@@ -21,7 +24,7 @@ Synopsis
 
 filecombine <file> [<include_tag>]
 
-file: The name of the main file.
+file: The name of the topmost file.
 include_tag: An alternative include indicator, if '#include' is unsuitable.
 
 Output is to the stdout.
@@ -50,5 +53,8 @@ world
 
 Notice that indentation is inherited.
 
-----------------------------
-Copyright (C) Jaypha 2014.
+License
+-------
+
+All original code is distributed under the Boost License
+(see LICENSE.txt).
