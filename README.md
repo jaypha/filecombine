@@ -1,7 +1,7 @@
-Filecombine
+H-Cat
 ===========
 
-Heirarchical file combiner
+Heirarchical file concatination
 
 Motivation
 ----------
@@ -22,10 +22,12 @@ processor.
 Synopsis
 --------
 
-filecombine <file> [<include_tag>]
+```
+hcat <file> [<include-tag>]
+```
 
 file: The name of the topmost file.
-include_tag: An alternative include indicator, if '#include' is unsuitable.
+include-tag: An alternative include indicator, if '#include' is unsuitable.
 
 Output is to the stdout.
 

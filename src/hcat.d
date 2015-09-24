@@ -3,7 +3,7 @@
 /*
  * Combines a hierarchy of files into a single output stream.
  *
- * Copyright (C) Jaypha 2014.
+ * Copyright (C) Jaypha 2014-15.
  *
  * Distributed under the Boost Software License, Version 1.0.
  * (See http://www.boost.org/LICENSE_1_0.txt)
@@ -11,7 +11,7 @@
  * Authors: Jason den Dulk
  */
 
-module filecombine;
+module hcat;
 
 import std.stdio;
 import std.algorithm;
@@ -19,9 +19,9 @@ import std.string;
 import std.path;
 import std.file;
 
-string include_str;
+string includeStr;
 
-void read_file(string fname, string indent)
+void readFile(string fname, string indent)
 {
   auto cwd = getcwd();
   chdir(dirName(fname));
@@ -29,9 +29,9 @@ void read_file(string fname, string indent)
 
   foreach (string line; lines(fin))
   {
-    auto r = findSplit(line,include_str);
+    auto r = findSplit(line,includeStr);
     if (!r[1].length == 0)
-      read_file(strip(r[2]),indent ~ r[0]);
+      readFile(strip(r[2]),indent ~ r[0]);
     else
       stdout.write(indent,line);
   }
@@ -42,16 +42,16 @@ void main(string[] args)
 {
   if (args.length < 2)
   {
-    writeln("synopsis: filecombine <file> [<include_tag>]");
+    writeln("synopsis: hcat <file> [<include-tag>]");
   }
   else
   {
     if (args.length < 3)
-        include_str = "#include";
+        includeStr = "#include";
     else
-        include_str = args[2];
+        includeStr = args[2];
 
     //chdir(dirName(args[1]));
-    read_file(args[1],"");
+    readFile(args[1],"");
   }
 }

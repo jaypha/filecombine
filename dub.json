@@ -1,11 +1,11 @@
 {
-	"name": "filecombine",
+	"name": "hcat",
 	"description": "Utiltiy to combine a hierarchy of files",
   "copyright": "Copyright 2014, Jaypha",
 	"authors": ["Jason den Dulk"],
-  "homepage": "https://github.com/jaypha/filecombine",
+  "homepage": "https://github.com/jaypha/hcat",
 	"license": "BSL-1.0",
 
   "targetType": "executable",
-  "mainSourceFile": "src/filecombine.d",
+  "mainSourceFile": "src/hcat.d",
 }
